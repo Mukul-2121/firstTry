@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		
-
-
-	</title>
+	<title></title>
 </head>
-	<script>
 
-	
+<script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '2097088610546467',
-      cookie     : true,
+      appId      : '1470505273079948',
       xfbml      : true,
       version    : 'v3.2'
     });
-      
-    FB.AppEvents.logPageView();   
-      
+    FB.AppEvents.logPageView();
   };
-
+  function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -29,19 +25,12 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-		
-		function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
 </script>
 <body>
 <fb:login-button 
   scope="public_profile,email"
   onlogin="checkLoginState();">
 </fb:login-button>
-
 
 
 </body>
